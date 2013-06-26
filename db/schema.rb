@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626054215) do
+ActiveRecord::Schema.define(:version => 20130626093511) do
 
   create_table "administrators", :force => true do |t|
     t.string   "admin_name"
@@ -120,6 +120,17 @@ ActiveRecord::Schema.define(:version => 20130626054215) do
   add_index "hotels", ["name_ko"], :name => "index_hotels_on_name_ko"
   add_index "hotels", ["name_th"], :name => "index_hotels_on_name_th"
   add_index "hotels", ["name_zh"], :name => "index_hotels_on_name_zh"
+
+  create_table "photos", :force => true do |t|
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "photoable_id"
+    t.string   "photoable_type"
+  end
 
   create_table "prices", :force => true do |t|
     t.datetime "created_at", :null => false

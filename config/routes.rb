@@ -26,6 +26,8 @@ Hotelsite::Application.routes.draw do
     match "/log_out" => "sessions#destroy", :as => :log_out
   
    resources :users
+
+   resources :hotel
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

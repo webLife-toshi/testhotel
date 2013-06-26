@@ -8,6 +8,7 @@ gem 'bootstrap-sass'
 gem 'sqlite3'
 gem 'nokogiri'
 
+gem 'paperclip'
 group :development do
   gem 'bullet'
 end
