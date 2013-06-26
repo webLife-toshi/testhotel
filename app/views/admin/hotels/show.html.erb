@@ -1,0 +1,74 @@
+<h1>Admin side Hotel Show</h1>
+<p>Hotel show  page</p>
+<p>
+<% @area.each do |area| %>
+<p>
+<b>area:</b>
+<%= area.area %>
+</p>
+<p>
+<b>country:</b>
+<%= area.country %>
+</p>
+<% end %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @hotel.name_en %>
+</p>
+
+<p>
+  <b>address:</b>
+  <%= @hotel.address_en %>
+</p>
+<p>
+  <b>lat:</b>
+  <%= @hotel.lat %>
+</p>
+
+<p>
+   <b>lng:</b>
+   <%= @hotel.lng %>
+</P>
+
+<p>
+   <b>free_wifi:</b>
+   <%= @hotel.free_wifi %>
+</p>
+
+<p>
+  <b>charged_wifi</b>
+  <%= @hotel.charged_wifi %>
+</p>
+
+<% @facility.each do |fac|%>
+<p>
+<b>Room Service:</b>
+<%= fac.roomservice %>
+</p>
+
+<p>
+<b>Family Room</b>
+<%= fac.familyroom %>
+</p>
+
+<p>
+<b>Restaurant</b>
+<%= fac.restaurant %>
+</p>
+
+<p>
+<b>Nightclub</b>
+<%= fac.nightclub %>
+</p>
+<p>
+<b>Tours</b>
+<%= fac.tours %>
+</p>
+<p>
+<b>Wifi Public Areas</b>
+<%= fac.wifipublicareas %>
+</p>
+<% end %>
+
