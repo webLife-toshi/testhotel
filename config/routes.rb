@@ -6,8 +6,6 @@ Hotelsite::Application.routes.draw do
  # get "users/new"
  # get "static_pages/home"
  # get "static_pages/about"
-
-
   match "/" => "static_pages#home", :as => :root
   match "/about" => "static_pages#about", :as => :about
 
@@ -19,6 +17,7 @@ Hotelsite::Application.routes.draw do
    match "/log_out" => "sessions#destroy", :as => :log_out
 
   resources :password_resets 
+  resources :hotels, only: [:show]
 
   namespace :admin do
    resources :administrators # except: [:new]

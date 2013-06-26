@@ -2,7 +2,7 @@ class Administrator < ActiveRecord::Base
   attr_accessible :admin_email, :admin_name, :password, :password_confirmation
 
   before_save :admin_encrypt_password
-#  before_save :create_admin_remember_token
+
   attr_accessor :password
   validates_confirmation_of :password
   validates_presence_of :admin_email
@@ -24,10 +24,4 @@ class Administrator < ActiveRecord::Base
       nil
     end
   end
-
-#  private
-#
-#   def create_admin_remember_token
-#     self.admin_remember_token = SecureRandom.urlsafe_base64
-#   end
 end
