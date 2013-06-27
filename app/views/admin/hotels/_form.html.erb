@@ -1,0 +1,78 @@
+<%= form_for [:admin, @hotel], {:html => { :multipart => true}} do |f| %>
+  <% if @hotel.errors.any? %>
+     <div id="error_explanation">
+       <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+       <ul>
+       <% @hotel.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+           <% end %>
+       </ul>
+      </div>
+       <% end %>
+
+  <div class="field">
+   <p>
+    <%= f.label :hotel_id %><br />
+    <%= f.text_field :hotel_id %>
+   </p>
+   <p>
+    <%= f.label :name_en %><br />
+    <%= f.text_field :name_en %>
+   </p>
+   <p>
+    <%= f.label :name_th %><br />
+    <%= f.text_field :name_th %>
+   </p>
+   <p>
+    <%= f.label :name_ja %><br />
+    <%= f.text_field :name_ja %>
+   </p>
+   <p>
+    <%= f.label :name_zh %><br />
+    <%= f.text_field :name_zh %>
+   </p>
+   <p>
+    <%= f.label :name_ko %><br />
+    <%= f.text_field :name_ko %>
+  </p>
+  <p>
+    <%= f.label :hotel_type %>
+    <%= f.text_field :hotel_type %>
+  </p>
+  <p>
+    <%= f.label :address_en %>
+    <%= f.text_field :address_en %>
+  </p>
+  <p>
+    <%= f.label :address_th %>
+    <%= f.text_field :address_th %>
+  </p>
+  <p>
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+  </p>
+  <p>
+    <%= f.label :lng %>
+    <%= f.text_field :lng %>
+  </p>
+  <p>
+   <b>free_wifi:</b>
+    <p>あり<%= radio_button 'hotel', 'free_wifi', 'true', {} %></p>
+    <p>無し<%= radio_button 'hotel', 'free_wifi', 'false', {} %></p>
+  </p>
+  <p>
+   <b>charged_wifi:</b>
+   <p>あり<%= radio_button 'hotel', 'charged_wifi', 'true', {} %></p>
+   <p>無し<%= radio_button 'hotel', 'charged_wifi', 'false', {} %></p>
+  </p>
+ <div class="field">
+  <%= image_tag @photo.image.url if @photo.image.present? %><br />
+    <%= f.label :image %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
