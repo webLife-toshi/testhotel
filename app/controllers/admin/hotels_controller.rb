@@ -18,12 +18,18 @@ class Admin::HotelsController < Admin::AdminController
 
   def edit
     @hotel = Hotel.find(params[:id])
-    @photo = @hotel.photos
   end
 
   def update
+    @hotel = Hotel.find(params[:id])
+    if @hotel.update_attributes(params[:hotel])
+      flash[:success] = "Hotel updated"
+      redirect_to @hotel
+    else
+      render 'edit'
+    end
   end
-
+ 
   def destroy
   end
 end

@@ -1,4 +1,4 @@
-<%= form_for [:admin, @hotel], {:html => { :multipart => true}} do |f| %>
+<%= form_for [:admin, @hotel],:html => { :multipart => true } do |f| %>
   <% if @hotel.errors.any? %>
      <div id="error_explanation">
        <h2><%= pluralize(@hotel.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -66,12 +66,10 @@
    <p>あり<%= radio_button 'hotel', 'charged_wifi', 'true', {} %></p>
    <p>無し<%= radio_button 'hotel', 'charged_wifi', 'false', {} %></p>
   </p>
- <div class="field">
-  <%= image_tag @photo.image.url if @photo.image.present? %><br />
-    <%= f.label :image %><br />
-    <%= f.file_field :image %>
-  </div>
-
+  <p>
+    <b>Image:</b>
+    <p><%= f.file_field :image %></p>
+  </p>
   <div class="actions">
     <%= f.submit %>
   </div>
