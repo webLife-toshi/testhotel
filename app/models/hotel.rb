@@ -7,4 +7,5 @@ has_many :hotel_facilities
 has_many :facilities, :through => :hotel_facilities
 has_many :hotel_areas
 has_many :areas, :through => :hotel_areas
+has_many :photos, :as => :photoable
 end
