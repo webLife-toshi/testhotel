@@ -5,9 +5,11 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'bootstrap-sass'
-gem 'sqlite3'
 gem 'nokogiri'
 
+group :development, :test do
+gem 'sqlite3'
+end
 
 group :development do
   gem 'bullet'
@@ -28,7 +30,7 @@ end
 gem 'jquery-rails'
 
 group :production do
-gem 'pg', '0.12.2'
+gem 'pg'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
