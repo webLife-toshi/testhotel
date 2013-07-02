@@ -1,0 +1,20 @@
+<h1>Photos</h1>
+
+<ul id="comments">
+  <% @photo.each do |photo| %>
+    <li><%= image_tag photo.image_url.to_s %></li>
+    <li><%= photo.image %></li>
+    <li><%= link_to "delete", @photo, :confirm => "You sure?", :method => :delete %></li>
+  <% end %>
+</ul>
+
+<h2>New Photo</h2>
+<%= form_for [:admin,:hotel, Photo.new] do |f| %>
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Add comment" %>
+  </div>
+<% end %>
+

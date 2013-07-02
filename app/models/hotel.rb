@@ -4,8 +4,8 @@ class Hotel < ActiveRecord::Base
                   :name_th, :name_zh, :hotel_type, :facility_id, :area_id
 
 has_many :hotel_facilities
-has_many :facilities, :through => :hotel_facilities
+has_many :facilities, :through => :hotel_facilities, :dependent => :destroy
 has_many :hotel_areas
-has_many :areas, :through => :hotel_areas
-has_many :photos, :as => :photoable
+has_many :areas, :through => :hotel_areas, :dependent => :destroy
+has_many :photos, :as => :photoable, :dependent => :destroy
 end

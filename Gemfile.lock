@@ -33,6 +33,9 @@ GEM
     bootstrap-sass (2.3.1.3)
       sass (~> 3.2)
     builder (3.0.4)
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -85,6 +88,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    rmagick (2.13.1)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -112,11 +116,13 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass
+  carrierwave
   coffee-rails (~> 3.2.1)
   jquery-rails
   nokogiri
   pg
   rails (= 3.2.13)
+  rmagick
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

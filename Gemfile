@@ -11,7 +11,8 @@ gem 'pg', groups: %w(production), require: false
 #group :development, :test do
 #  gem 'sqlite3'
 #end
-
+gem 'carrierwave'
+gem 'rmagick'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
